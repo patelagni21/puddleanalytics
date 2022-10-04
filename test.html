@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+        display: grid; 
+        grid-auto-rows: 1fr; 
+        grid-template-columns: repeat(4, 1fr); 
+        grid-template-rows: 0.9fr 0.6fr; 
+        gap: 10px 10px; 
+        grid-template-areas: 
+          "large-box1 large-box2 small-boxes tiny-boxes"
+          "medium-box1 medium-box2 medium-box3 tiny-boxes"; 
+      }
+      .large-box1 { grid-area: large-box1; }
+      .large-box2 { grid-area: large-box2; }
+      .small-boxes {
+        display: grid; 
+        grid-template-columns: 1fr; 
+        grid-template-rows: repeat(2, 1fr); 
+        gap: 10px 0px; 
+        grid-template-areas: 
+          "small-box1"
+          "small-box2"; 
+        grid-area: small-boxes; 
+      }
+      .small-box1 { grid-area: small-box1; }
+      .small-box2 { grid-area: small-box2; }
+      .medium-box1 { grid-area: medium-box1; }
+      .medium-box2 { grid-area: medium-box2; }
+      .medium-box3 { grid-area: medium-box3; }
+      .tiny-boxes {
+        display: grid; 
+        grid-template-columns: 1fr; 
+        grid-template-rows: repeat(4, 1fr); 
+        gap: 10px 0px; 
+        grid-template-areas: 
+          "tiny-box1"
+          "tiny-box2"
+          "tiny-box3"
+          "tiny-box4"; 
+        grid-area: tiny-boxes; 
+      }
+      .tiny-box1 { grid-area: tiny-box1; }
+      .tiny-box2 { grid-area: tiny-box2; }
+      .tiny-box3 { grid-area: tiny-box3; }
+      .tiny-box4 { grid-area: tiny-box4; }
+</style>
+<body>
+    <div class="container">
+        <div class="large-box1"><img src="https://th.bing.com/th/id/OIP.4d7Emr_d4fJnEE6zK7pj_wHaFK?w=256&h=180&c=7&o=5&pid=1.7" alt="" srcset=""></div>
+        <div class="large-box2"><img src="https://th.bing.com/th/id/OIP.4d7Emr_d4fJnEE6zK7pj_wHaFK?w=256&h=180&c=7&o=5&pid=1.7" alt="" srcset=""></div>
+        <div class="small-boxes">
+          <div class="small-box1"><img src="https://th.bing.com/th/id/OIP.4d7Emr_d4fJnEE6zK7pj_wHaFK?w=256&h=180&c=7&o=5&pid=1.7" alt="" srcset=""></div>
+          <div class="small-box2"><img src="https://th.bing.com/th/id/OIP.4d7Emr_d4fJnEE6zK7pj_wHaFK?w=256&h=180&c=7&o=5&pid=1.7" alt="" srcset=""></div>
+        </div>
+        <div class="medium-box1"><img src="https://th.bing.com/th/id/OIP.4d7Emr_d4fJnEE6zK7pj_wHaFK?w=256&h=180&c=7&o=5&pid=1.7" alt="" srcset=""></div>
+        <div class="medium-box2"><img src="https://th.bing.com/th/id/OIP.4d7Emr_d4fJnEE6zK7pj_wHaFK?w=256&h=180&c=7&o=5&pid=1.7" alt="" srcset=""></div>
+        <div class="medium-box3"><img src="https://th.bing.com/th/id/OIP.4d7Emr_d4fJnEE6zK7pj_wHaFK?w=256&h=180&c=7&o=5&pid=1.7" alt="" srcset=""></div>
+        <div class="tiny-boxes">
+          <div class="tiny-box1"><img src="https://th.bing.com/th/id/OIP.4d7Emr_d4fJnEE6zK7pj_wHaFK?w=256&h=180&c=7&o=5&pid=1.7" alt="" srcset=""></div>
+          <div class="tiny-box2"><img src="https://th.bing.com/th/id/OIP.4d7Emr_d4fJnEE6zK7pj_wHaFK?w=256&h=180&c=7&o=5&pid=1.7" alt="" srcset=""></div>
+          <div class="tiny-box3"><img src="https://th.bing.com/th/id/OIP.4d7Emr_d4fJnEE6zK7pj_wHaFK?w=256&h=180&c=7&o=5&pid=1.7" alt="" srcset=""></div>
+          <div class="tiny-box4"><img src="https://th.bing.com/th/id/OIP.4d7Emr_d4fJnEE6zK7pj_wHaFK?w=256&h=180&c=7&o=5&pid=1.7" alt="" srcset=""></div>
+        </div>
+      </div>
+</body>
+</html>

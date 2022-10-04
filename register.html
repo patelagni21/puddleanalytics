@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script>
+    window.addEventListener("load", ()=>{
+      var pw = document.getElementsByName("password")[0]; 
+      var confirmPw = document.getElementsByName("confirmPassword")[0];
+      var register = document.getElementById("register")
+  
+      function doesMatch(){
+          confirmPw.classList.toggle(
+              "invalid",
+              pw.value != confirmPw.value
+          )
+          register.disabled = pw.value != confirmPw.value ? true : false
+      }
+  
+      pw.addEventListener("input",doesMatch)
+      confirmPw.addEventListener("input",doesMatch)
+  })
+  </script>
+  <title>Puddle - Login Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{{ url_for('static',filename='styles/loginstyles.css') }}">
+</head>
+
+<body>
+
+  <div class="container">
+    <form action="" method="post">
+      <div class="row">
+        <br>
+        <br>
+        <br>
+        <br>
+        <img src="{{ url_for('static',filename='images/logo.jpg') }}">
+        <br>
+        <br>
+        <br>
+        <br>
+        <input type="text" placeholder="Full Name" name="fullName" value="{{
+          request.form.fullName }}">
+          <br>
+         <input type="email" placeholder="Email" name="email" value="{{
+          request.form.email }}">
+          <br>
+        <input type="text" placeholder="Username" name="username" value="{{
+        request.form.username }}">
+        <br>
+       <input type="password" placeholder="Password" name="password" value="{{
+        request.form.password }}">
+        <br>
+        <input type="password" placeholder="Confirm Password" name="confirmPassword" value="{{
+          request.form.confirmPassword }}">
+          <br>
+      <input class="btn btn-default" type="submit" value="Register" id="register">
+      </div>
+    </form>
+    {% if error %}
+      <p class="error"><strong>Error:</strong> {{ error }}</p>
+    {% endif %}
+  <div class="bottom-container">
+    <div class="row">
+      <div class="col">
+        <a href="{{ url_for('login') }}" style="color:white" class="btn">Login</a>
+      </div>
+    </div>
+  </div>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul class=flashes style="width:100vw;">
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+  </div>
+
+</body>
+
+</html>

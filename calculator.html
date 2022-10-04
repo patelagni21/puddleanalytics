@@ -1,0 +1,56 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title></title>
+<script language="javascript" src="{{ url_for('static',filename='styles/calc_functions.js') }}"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<link href="{{ url_for('static',filename='styles/calc_styles.css') }}" rel="stylesheet">
+<style type="text/css">
+body
+{
+	color:#000;
+	background-color:#FFF;
+	font-size:80%;
+	padding:50px;
+	font-family:verdana,arial,helvetica;
+}
+#demo
+{
+	margin:50px;
+}
+p
+{
+	line-height:20px;
+}
+/* delete the style declaration below if you do not want it to be transparent! */
+#calculator
+{
+	filter:alpha(opacity=85);
+	-moz-opacity:.85;
+	opacity:.85;
+}/*test*/
+</style>
+</head>	  
+<body>
+<div id="demo">
+	<form onsubmit="calculate(); return false;">
+	<div id="calculator" class="drag">
+		<div class="calculatorcontainer">
+			<div id="version"><h1>&emsp;Calculator</h1></div>
+			<div id="control">
+				<!-- <a href="#" onclick="about();return false"><img src="q.gif"/></a> -->
+				<h2><i onclick="closeCalculator();return false" class="bi bi-x-square"></i></h2>
+			</div>
+			<input type="text" name="input" size="16" id="result" onclick="this.focus()" onkeyup="addToCalcDirect(this.value)"><br/>
+			<input type="button" value="1" onclick="addToCalc(this.value)"><input type="button" value="2" onclick="addToCalc(this.value)"><input type="button" value="3" onclick="addToCalc(this.value)"><input type="button" value="+" onclick="addToCalc(this.value)" class="operation"><br/>
+			<input type="button" value="4" onclick="addToCalc(this.value)"><input type="button" value="5" onclick="addToCalc(this.value)"><input type="button" value="6" onclick="addToCalc(this.value)"><input type="button" value="-" onclick="addToCalc(this.value)" class="operation"><br/>
+			<input type="button" value="7" onclick="addToCalc(this.value)"><input type="button" value="8" onclick="addToCalc(this.value)"><input type="button" value="9" onclick="addToCalc(this.value)"><input type="button" value="X" onclick="addToCalc(this.value)" class="operation"><br/>
+			<input type="button" value="+/-" onclick="positiveNegative()" class="operation"><input type="button" value="0" onclick="addToCalc(this.value)"><input type="button" value="." onclick="addToCalc(this.value)" class="operation"><input type="button" value="/" onclick="addToCalc(this.value)" class="operation"><br/>
+			<input type="button" value="&#8730;" onclick="squareRoot()" class="operation"><input type="button" value="%" onclick="percentage()" class="operation"><input type="button" value="c" onclick="resetCalc()" class="operation"><input type="button" value="=" onclick="calculate()" class="equals">
+		</div>
+	</div>
+	</form>
+</div>
+
+</body>
+</html>

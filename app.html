@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sidebars/"> -->
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link href="{{ url_for('static', filename='styles/webdatarocks.min.css') }}" rel="stylesheet" />
+    <script src="{{ url_for('static', filename='styles/webdatarocks.toolbar.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='styles/webdatarocks.js') }}"></script>
+    <script src="{{ url_for('static', filename='styles/p.js') }}"></script>
+
+
+    <link href="https://cdn.webdatarocks.com/latest/webdatarocks.min.css" rel="stylesheet"/>
+    <script src="https://cdn.webdatarocks.com/latest/webdatarocks.toolbar.min.js"></script>
+    <script src="https://cdn.webdatarocks.com/latest/webdatarocks.js"></script>
+    
+
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/styles.css') }}" />
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='styles/sidebars.css') }}" rel="stylesheet">
+</head>
+
+<body onload="closeModal()">
+
+    <main>
+        <h1 class="visually-hidden">Sidebars examples</h1>
+        <!-- nav bar -->
+        <div class="d-flex flex-column flex-shrink-0 bg-dark" style="width:4.5rem;">
+            <a href="/" class="d-block p-3 link-dark text-decoration-none" title="Icon-only" data-bs-toggle="tooltip"
+                data-bs-placement="right">
+                <svg class="bi" width="40" height="32">
+                    <use xlink:href="#bootstrap" />
+                </svg>
+                <span class="visually-hidden">Icon-only</span>
+            </a>
+            <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+                <li class="nav-item">
+                    <a href="" class="nav-link active py-3 border-bottom" aria-current="page" title="Home"
+                        data-bs-toggle="tooltip" data-bs-placement="right">
+                        <!-- <svg class="bi" width="24" height="24" role="img" aria-label="Home"><use xlink:href="#home"/></svg> -->
+                        <h4><i class="bi bi-house-door" role="img" aria-label="Home"></i></h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link py-3 border-bottom" title="Dashboard" data-bs-toggle="tooltip"
+                        data-bs-placement="right">
+                        <!-- <svg class="bi" width="24" height="24" role="img" aria-label="Dashboard"><use xlink:href="#speedometer2"/></svg> -->
+                        <h4><i class="bi bi-graph-up" role="img" aria-label="Dashboard"></i></h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link py-3 border-bottom" title="Orders" data-bs-toggle="tooltip"
+                        data-bs-placement="right">
+                        <!-- <svg class="bi" width="24" height="24" role="img" aria-label="Orders"><use xlink:href="#table"/></svg> -->
+                        <h4><i class="bi bi-people-fill"></i></h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="settings" class="nav-link py-3 border-bottom" title="Settings" data-bs-toggle="tooltip"
+                        data-bs-placement="right">
+                        <!-- <svg class="bi" width="24" height="24" role="img" aria-label="Products"><use xlink:href="#grid"/></svg> -->
+                        <h4><i class="bi bi-gear" role="img" aria-label="Settings"></i></h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link py-3 border-bottom" title="Customers" data-bs-toggle="tooltip"
+                        data-bs-placement="right">
+                        <!-- <svg class="bi" width="24" height="24" role="img" aria-label="Customers"><use xlink:href="#people-circle"/></svg> -->
+                        <h4><i class="bi bi-person-lines-fill" role="img" aria-label="Customers"></i></h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="/logout" class="nav-link py-3 border-bottom" title="Logout" data-bs-toggle="tooltip"
+                        data-bs-placement="right">
+                        <!-- <svg class="bi" width="24" height="24" role="img" aria-label="Customers"><use xlink:href="#people-circle"/></svg> -->
+                        <h4><i class="bi bi-power" role="img" aria-label="Logout"></i></h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="calculator" class="nav-link py-3 border-bottom" title="Calculator" data-bs-toggle="tooltip"
+                        data-bs-placement="right">
+                        <!-- <svg class="bi" width="24" height="24" role="img" aria-label="Customers"><use xlink:href="#people-circle"/></svg> -->
+                        <h4><i class="bi bi-calculator" role="img" aria-label="Calculator"></i></h4>
+                    </a>
+                </li>
+            </ul>
+            <!-- <div class="dropdown border-top">
+      <a href="#" class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="https://github.com/mdo.png" alt="mdo" width="24" height="24" class="rounded-circle">
+      </a>
+      <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser3">
+        <li><a class="dropdown-item" href="#">New project...</a></li>
+        <li><a class="dropdown-item" href="#">Settings</a></li>
+        <li><a class="dropdown-item" href="#">Profile</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">Sign out</a></li>
+      </ul>
+    </div> -->
+        </div>
+
+        <div class="b-example-divider"></div>
+
+        <div class="container-fluid">
+            <div id="myModal" class=""><span class="close cursor" onclick="closeModal()">&times;</span>
+                <div class="modal-content">
+
+                    <div class="mySlides">
+
+                        <object type="image/svg+xml" data="{{image1_url}}" class=" demo cursor"
+                            style="width:80%"></object>
+                            <div id="wdr-component1"></div>
+                            <script>
+                                var pivot = new WebDataRocks({
+                                    container: "#wdr-component1",
+                                    toolbar: true,
+                                    height: 395,
+                                    report: {
+                                      dataSource: {
+                                        filename: "https://cdn.webdatarocks.com/data/data.csv"
+                                      }
+                                    }
+                                  });
+                            </script>
+
+                    </div>
+
+                    <div class="mySlides">
+                        <object type="image/svg+xml" data="{{image2_url}}" class="demo cursor"
+                            style="width:80%"></object>
+                        <div id="wdr-component2"></div>
+                        <script>
+                            var pivot = new WebDataRocks({
+                                container: "#wdr-component2",
+                                toolbar: true,
+                                report: {
+                                    dataSource: {
+                                        filename: "https://cdn.webdatarocks.com/data/data.csv"
+                                    }
+                                }
+                            });
+                        </script>
+                    </div>
+                    <div class="mySlides">
+
+                        <object type="image/svg+xml" data="{{image3_url}}" class=" demo cursor"
+                            style="width:80%; "></object>
+                        <div id="wdr-component3"></div>
+                        <script>
+                            var pivot = new WebDataRocks({
+                                container: "#wdr-component3",
+                                toolbar: true,
+                                report: {
+                                    dataSource: {
+                                        filename: "https://cdn.webdatarocks.com/data/data.csv"
+                                    }
+                                }
+                            });
+                        </script>
+                    </div>
+                    <div class="mySlides">
+
+                        <object type="image/svg+xml" data="{{image4_url}}" class=" demo cursor"
+                            style="width:80%"></object>
+                        <div id="wdr-component4"></div>
+                        <script>
+                            var pivot = new WebDataRocks({
+                                container: "#wdr-component4",
+                                toolbar: true,
+                                report: {
+                                    dataSource: {
+                                        filename: "https://cdn.webdatarocks.com/data/data.csv"
+                                    }
+                                }
+                            });
+                        </script>
+                    </div>
+                    <div class="mySlides">
+
+                        <object type="image/svg+xml" data="{{image5_url}}" class=" demo cursor"
+                            style="width:80%"></object>
+                        <div id="wdr-component5"></div>
+                        <script>
+                            var pivot = new WebDataRocks({
+                                container: "#wdr-component5",
+                                toolbar: true,
+                                report: {
+                                    dataSource: {
+                                        filename: "https://cdn.webdatarocks.com/data/data.csv"
+                                    }
+                                }
+                            });
+                        </script>
+                    </div>
+                    <div class="mySlides">
+
+                        <object type="image/svg+xml" data="{{image6_url}}" class=" demo cursor"
+                            style="width:80%"></object>
+                        <div id="wdr-component6"></div>
+                        <script>
+                            var pivot = new WebDataRocks({
+                                container: "#wdr-component6",
+                                toolbar: true,
+                                report: {
+                                    dataSource: {
+                                        filename: "https://cdn.webdatarocks.com/data/data.csv"
+                                    }
+                                }
+                            });
+                        </script>
+                    </div>
+                    <div class="mySlides">
+
+                        <object type="image/svg+xml" data="{{image7_url}}" class=" demo cursor"
+                            style="width:80%"></object>
+                        <div id="wdr-component7"></div>
+                        <script>
+                            var pivot = new WebDataRocks({
+                                container: "#wdr-component7",
+                                toolbar: true,
+                                report: {
+                                    dataSource: {
+                                        filename: "https://cdn.webdatarocks.com/data/data.csv"
+                                    }
+                                }
+                            });
+                        </script>
+                    </div>
+                </div>
+                <a class="prev text-decoration-none" id="prev" onclick="plusSlides(-1)" style="font-size:30px;">
+                    &#10094;
+                </a>
+                <a class="next text-decoration-none" id="next" onclick="plusSlides(1)" style="font-size:30px;">
+                    &#10095;
+                </a>
+            </div>
+            <p></p>
+            <!-- <div class="row g-2"> -->
+            <div class="Gridcontainer">
+                <div class="large-box1 p-3 border bg-light" onclick="openModal();currentSlide(1)">
+                        <object type="image/svg+xml" data="{{image1_url}}" style="pointer-events: none">
+                            Your browser does not support SVG
+                        </object>
+                    </div>
+                    <div class="large-box2 p-3 border bg-light" onclick="openModal();currentSlide(2)">
+                        <object type="image/svg+xml" data="{{image2_url}}" style="pointer-events: none">
+                            Your browser does not support SVG
+                        </object>
+                    </div>
+                    <div class="medium-box-1 p-3 border bg-light" onclick="openModal();currentSlide(3)">
+                        <object type="image/svg+xml" data="{{image3_url}}" style="pointer-events: none">
+                            Your browser does not support SVG
+                        </object>
+                    </div>
+                    <div class="small-box1 p-3 border bg-light" onclick="openModal();currentSlide(4)">
+
+                        <object type="image/svg+xml" data="{{image4_url}}" style="pointer-events: none">
+                            Your browser does not support SVG
+                        </object>
+
+                    </div>
+                    <div class="small-box2 p-3 border bg-light" onclick="openModal();currentSlide(5)">
+                        <object type="image/svg+xml" data="{{image5_url}}" style="pointer-events: none">
+                            Your browser does not support SVG
+                        </object>
+                    </div>
+                    <div class="large-box3 p-3 border bg-light" onclick="openModal();currentSlide(6)">
+
+                        <object type="image/svg+xml" data="{{image6_url}}" style="pointer-events: none">
+                            Your browser does not support SVG
+                        </object>
+
+                    </div>
+                    <div class="medium-box2 p-3 border bg-light" onclick="openModal();currentSlide(7)">
+                        <object type="image/svg+xml" data="{{image7_url}}" style="pointer-events: none">
+                            Your browser does not support SVG
+                        </object>
+                    </div>
+                    <!-- <div class="col-4">
+                    <div class="p-3 border bg-light" onclick="openModal();currentSlide(1)">
+                        <object type="image/svg+xml" data="{{image1_url}}" style="pointer-events: none">
+                            Your browser does not support SVG
+                        </object>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="p-3 border bg-light" onclick="openModal();currentSlide(2)">
+                        <object type="image/svg+xml" data="{{image2_url}}" style="pointer-events: none">
+                            Your browser does not support SVG
+                        </object>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="p-3 border bg-dark">
+                        <div onclick="openModal();currentSlide(3)">
+                            <object type="image/svg+xml" data="{{image3_url}}" style="pointer-events: none">
+                                Your browser does not support SVG
+                            </object>
+                        </div>
+                        <div onclick="openModal();currentSlide(4)">
+                            <object type="image/svg+xml" data="{{image4_url}}" style="pointer-events: none">
+                                Your browser does not support SVG
+                            </object>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="p-3 border bg-light" onclick="openModal();currentSlide(5)">
+                        <object type="image/svg+xml" data="{{image5_url}}" style="pointer-events: none">
+                            Your browser does not support SVG
+                        </object>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="p-3 border bg-light" onclick="openModal();currentSlide(6)">
+                        <object type="image/svg+xml" data="{{image6_url}}" style="pointer-events: none">
+                            Your browser does not support SVG
+                        </object>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="p-3 border bg-light" onclick="openModal();currentSlide(7)">
+                        <object type="image/svg+xml" data="{{image7_url}}" style="pointer-events: none">
+                            Your browser does not support SVG
+                        </object>
+                    </div>
+                </div> -->
+                    <!-- </div> -->
+                </div>
+    </main>
+    <!-- js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='styles/sidebars.js') }}"></script>
+</body>
